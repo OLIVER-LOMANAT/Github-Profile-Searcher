@@ -1,4 +1,4 @@
-# GitHub Finder
+# GitHub-Profile Searcher
 
 This is a small web app that helps you find GitHub user profiles.  
 You can search for someone’s GitHub username and see their profile info and list of repositories.
