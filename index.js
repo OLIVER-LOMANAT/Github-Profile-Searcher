@@ -11,3 +11,14 @@ toggle.addEventListener('change', function () {
         document.body.classList.remove('light-mode');
     }
 });
+
+
+searchBtn.addEventListener('click', () => {
+    const name = userName.value.trim();
+    if (!name) {
+        return alert("Please enter user name");
+    }
+    displayer.innerHTML = "";
+    searchUser(name);
+    userName.value = "";
+});
