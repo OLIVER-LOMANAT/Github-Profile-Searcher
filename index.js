@@ -22,3 +22,16 @@ searchBtn.addEventListener('click', () => {
     searchUser(name);
     userName.value = "";
 });
+
+function searchUser(name) {
+    fetch(`https://api.github.com/users/${name}`)
+        .then(res => {
+            if (!res.ok) throw new Error('User not found');
+            return res.json();
+        })
+        .then(user => {
+            renderUserInfo(user);
+            searchRepos(user);
+        })
+        .catch(error => alert(`Error: ${error.message}`));
+}
