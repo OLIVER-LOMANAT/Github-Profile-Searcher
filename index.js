@@ -54,3 +54,26 @@ function renderUserInfo(user) {
     `;
 }
 
+
+function searchRepos(user) {
+    fetch(`https://api.github.com/users/${user.login}/repos`)
+        .then(res => {
+            if (!res.ok) throw new Error('Repo not found');
+            return res.json();
+        })
+        .then(repos => {
+            if (repos.length === 0) {
+                displayer.innerHTML += '<p>You have no repositories.</p>';
+                return;
+            }
+
+            const reposHTML = `
+                <div class="repos-grid">
+                    ${repos.map(repo => renderUserRepo(repo)).join('')}
+                </div>
+            `;
+            displayer.innerHTML += reposHTML;
+        })
+        .catch(error => alert(`Error: ${error.message}`));
+}
+
