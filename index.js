@@ -77,3 +77,16 @@ function searchRepos(user) {
         .catch(error => alert(`Error: ${error.message}`));
 }
 
+function renderUserRepo(repo) {
+    return `
+    <div class="git-repo">
+        <h3><a href="${repo.html_url}">${repo.name}</a></h3>
+        <p>${repo.description}</p>
+        <div>
+            <div class="repo-stars">${repo.stargazers_count}</div>
+            <div class="repo-forks">${repo.forks_count}</div>
+            <div class="repo-lang">${repo.language}</div>
+        </div>
+    </div>
+    `;
+}
