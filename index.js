@@ -35,3 +35,22 @@ function searchUser(name) {
         })
         .catch(error => alert(`Error: ${error.message}`));
 }
+
+
+function renderUserInfo(user) {
+    displayer.innerHTML = `
+    <div class="git-profile">
+        <div class="git-header">
+            <div class="git-avatar"><img src="${user.avatar_url}" alt="Avatar of ${user.login}"></div>
+            <div>${user.name || user.login}</div>
+        </div>    
+
+        <ul class="git-info">
+           <li><i class="fa-solid fa-person-walking"></i> Followers: ${user.followers}</li>
+           <li><i class="fa-solid fa-person-walking-arrow-loop-left"></i> Following: ${user.following}</li>
+           <li id="repo-btn"><i class="fa-solid fa-money-simple-from-bracket"></i> Repositories: ${user.public_repos}</li>
+        </ul>
+    </div>
+    `;
+}
+
