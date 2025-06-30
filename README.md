@@ -32,3 +32,7 @@ If you want, you can replace the token in `index.js` with your own, or remove it
 ## Made by
 
 Oliver Ekeno
+
+## Live Link
+
+https://oliver-lomanat.github.io/Github-Profile-Searcher/
